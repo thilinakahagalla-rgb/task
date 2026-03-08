@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>My <span class="gradient-text">TASKS</span></h1>
+            <p class="subtitle">Organize your workflow across KUtuss, Chemigo, and more.</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Add a new task..." aria-label="New Task">
+                <select id="categorySelect" aria-label="Category">
+                    <option value="kutuss">KUtuss</option>
+                    <option value="chemigo">Chemigo</option>
+                    <option value="other">Other</option>
+                </select>
+                <button id="addTaskBtn" class="primary-btn">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+        </section>
+
+        <main class="task-board">
+            <!-- KUtuss Category -->
+            <div class="task-column" id="col-kutuss">
+                <div class="column-header kutuss-theme">
+                    <i class="fas fa-bolt"></i>
+                    <h2>KUtuss</h2>
+                    <span class="task-count" id="count-kutuss">0</span>
+                </div>
+                <div class="task-list" id="list-kutuss"></div>
+            </div>
+
+            <!-- Chemigo Category -->
+            <div class="task-column" id="col-chemigo">
+                <div class="column-header chemigo-theme">
+                    <i class="fas fa-flask"></i>
+                    <h2>Chemigo</h2>
+                    <span class="task-count" id="count-chemigo">0</span>
+                </div>
+                <div class="task-list" id="list-chemigo"></div>
+            </div>
+
+            <!-- Other Category -->
+            <div class="task-column" id="col-other">
+                <div class="column-header other-theme">
+                    <i class="fas fa-layer-group"></i>
+                    <h2>Other</h2>
+                    <span class="task-count" id="count-other">0</span>
+                </div>
+                <div class="task-list" id="list-other"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="text" id="editInput">
+            <div class="modal-actions">
+                <button id="cancelEdit" class="secondary-btn">Cancel</button>
+                <button id="saveEdit" class="primary-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
