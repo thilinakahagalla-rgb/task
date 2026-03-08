@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="background-blobs">
         <div class="blob blob-1"></div>
@@ -34,6 +36,19 @@
                 <button id="addTaskBtn" class="primary-btn">
                     <i class="fas fa-plus"></i> Add
                 </button>
+            </div>
+
+            <div class="sync-controls">
+                <button id="syncBtn" class="sync-btn" title="Sync with Cloud">
+                    <i class="fas fa-cloud-upload-alt"></i> Sync
+                </button>
+                <button id="saveFileBtn" class="sync-btn" title="Save to File (Laptop)">
+                    <i class="fas fa-file-download"></i> Save File
+                </button>
+                <button id="loadFileBtn" class="sync-btn" title="Load from File">
+                    <i class="fas fa-file-upload"></i> Load File
+                </button>
+                <div id="syncStatus" class="sync-status">Last synced: Never</div>
             </div>
         </section>
 
@@ -84,4 +99,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
