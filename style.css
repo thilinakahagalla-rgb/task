@@ -3,17 +3,17 @@
     --card-bg: rgba(255, 255, 255, 0.05);
     --text-primary: #ffffff;
     --text-secondary: #a0a0a8;
-    
+
     --kutuss-color: #00f2ff;
     --chemigo-color: #bd00ff;
     --other-color: #ff9d00;
-    
+
     --success: #00e676;
     --danger: #ff5252;
-    
+
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    
+
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -76,8 +76,13 @@ body {
 }
 
 @keyframes move {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(100px, 50px) scale(1.1); }
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(100px, 50px) scale(1.1);
+    }
 }
 
 .container {
@@ -125,9 +130,54 @@ h1 {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
-input[type="text"], select {
+.sync-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.sync-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sync-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: var(--kutuss-color);
+}
+
+.sync-status {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .sync-status {
+        width: 100%;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+}
+
+input[type="text"],
+select {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
@@ -138,7 +188,8 @@ input[type="text"], select {
     transition: var(--transition);
 }
 
-input[type="text"]:focus, select:focus {
+input[type="text"]:focus,
+select:focus {
     border-color: var(--kutuss-color);
     background: rgba(255, 255, 255, 0.12);
 }
@@ -226,9 +277,17 @@ select option {
     color: var(--text-secondary);
 }
 
-.kutuss-theme { color: var(--kutuss-color); }
-.chemigo-theme { color: var(--chemigo-color); }
-.other-theme { color: var(--other-color); }
+.kutuss-theme {
+    color: var(--kutuss-color);
+}
+
+.chemigo-theme {
+    color: var(--chemigo-color);
+}
+
+.other-theme {
+    color: var(--other-color);
+}
 
 /* Task Items */
 .task-list {
@@ -250,8 +309,15 @@ select option {
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .task-item:hover {
@@ -323,8 +389,13 @@ select option {
     transition: var(--transition);
 }
 
-.action-btn.edit:hover { color: var(--kutuss-color); }
-.action-btn.delete:hover { color: var(--danger); }
+.action-btn.edit:hover {
+    color: var(--kutuss-color);
+}
+
+.action-btn.delete:hover {
+    color: var(--danger);
+}
 
 /* Modal Styles */
 .modal {
@@ -390,11 +461,11 @@ select option {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .task-column {
         min-height: auto;
     }
-    
+
     h1 {
         font-size: 2.5rem;
     }
@@ -404,11 +475,13 @@ select option {
     .input-group {
         flex-direction: column;
     }
-    
-    input[type="text"], select, .primary-btn {
+
+    input[type="text"],
+    select,
+    .primary-btn {
         width: 100%;
     }
-    
+
     .task-actions {
         opacity: 1;
     }
